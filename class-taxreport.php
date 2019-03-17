@@ -126,6 +126,20 @@ class TaxReport {
     $start_year = $first_order->get_date_created()->format("Y");
 
     echo '
+      <p>Coincards now offers customers the ability to download their transaction history for possible tax needs</p>
+      <p>Simply Select the year below you would like to generate a report for and click "Download Tax Report" to generate a CSV file of all transactions for that reporting period.</p>
+      <p>Coincards provides the following information:
+      <ul>
+      <li>- Order Number</li>
+      <li>- Order Status</li>
+      <li>- Order Date</li>
+      <li>- Email Address</li>
+      <li>- Order Total</li>
+      <li>- Order Tax Total</li>
+      <li>- BTC Address</li>
+      <li>- BTC Amount</li>
+      <li>- BTC -> CAD Exchange Rate</li>
+      </ul></p>
     <form action="" method="post">
     <select class="taxreport-select" name="taxreport_year" id="taxreport_year">';
 
@@ -133,7 +147,8 @@ class TaxReport {
       echo "<option value=\"$i\">$i</option>";
     }
 
-    echo '</select>
+
+    echo '</select></br></br>
     <button type="submit" name="taxreport_form" class="alt">Download Tax Report</button>
     </form>';
   }
